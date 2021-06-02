@@ -1,6 +1,6 @@
 
-let icon = document.querySelector(".user-header__icon");
-icon.addEventListener('Click', function(e){
-   // document.querySelector(".user-header__menu");
-    console.log('1');
+let user_icon = document.querySelector(".user-header__icon");
+user_icon.addEventListener('click', function(e){
+   let user_menu = document.querySelector(".user-header__menu");
+   user_menu.classList.toggle("_active");
 });
