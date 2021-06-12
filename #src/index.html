@@ -1,16 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('_head.html',{
-	"title":"Lux Trade"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('_header.html',{})
-			<main class="page">
-			</main>
-			@@include('_footer.html',{})
-		</div>
-		@@include('_popup.html',{})
-		@@include('_js.html',{})
-	</body>
+@@include('_head.html',{
+"title":"Lux Trade"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('_header.html',{})
+		<main class="page">
+			<section class="main-slider">
+				<div class="main-slider__body _swiper">
+					<div class="main-slider__item item-main-slider">
+						<div class="item-main-slider__bg _ibg">
+							<img src="img/sliderbg.jpg" alt="">
+						</div>
+						<div class="item-main-slider__content">
+							<div class="item-main-slider__container _container">
+								<div class="title">
+									<div class="title__item">Только эксклюзивные</div>
+									<div class="title__main title__main--w title__main--regular">Лоты под аукцион и свобоДную продажу
+									</div>
+								</div>
+								<div class="item-main-slider__text">Мы собираем эксклюзивную публику и экслюзивные лоты, даем удобный и
+									автоматизированный сервис по покупке и продаже, а также выставлению лотов на аукцион, предоставляем
+									личные кабинеты, а также оказываем сопутствубщие услуги с продажей редких и дорогих вещей</div>
+							</div>
+							<a href="#" class="item-main-slider__btn btn">
+								<span class="btn__body">
+									<span>Присоединиться</span>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="main-slider__item item-main-slider">
+						<div class="item-main-slider__bg _ibg">
+							<img src="img/sliderbg.jpg" alt="">
+						</div>
+						<div class="item-main-slider__content">
+							<div class="item-main-slider__container _container">
+								<div class="title">
+									<div class="title__item">Только эксклюзивные</div>
+									<div class="title__main title__main--w title__main--regular">Лоты под аукцион и свобоДную продажу
+									</div>
+								</div>
+								<div class="item-main-slider__text">Мы собираем эксклюзивную публику и экслюзивные лоты, даем удобный и
+									автоматизированный сервис по покупке и продаже, а также выставлению лотов на аукцион, предоставляем
+									личные кабинеты, а т вещей</div>
+							</div>
+							<a href="#" class="item-main-slider__btn btn">
+								<span class="btn__body">
+									<span>Присоединиться</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="main-slider__control control-main-slider">
+					<div class="control-main-slider__arrow control-main-slider__arrow_prev"></div>
+					<div class="control-main-slider__decor">
+						<img src="img/icons/ellipse_3_2191.png" alt="">
+					</div>
+					<div class="control-main-slider__arrow control-main-slider__arrow_next"></div>
+				</div>
+			</section>
+
+			<section class="lots">
+				<div class="lots__container _container">
+					<div class="lots__header block-header">
+						<div class="block-header__title title">
+							<div class="title__item">Популярные</div>
+							<div class="title__main">лоты Под аукцион
+							</div>
+						</div>
+						<div class="block-header__decor block-decor">
+							<div class="block-decor__items">
+								<span></span>
+							</div>
+							<div class="block-decor__icon">
+								<img src="img/block-header/watchIcon.png" alt="">
+							</div>
+							<div class="block-decor__items">
+								<span></span>
+							</div>
+						</div>
+					</div>
+					<div class="lots__slider"></div>
+				</div>
+			</section>
+
+		</main>
+		@@include('_footer.html',{})
+	</div>
+	@@include('_popup.html',{})
+	@@include('_js.html',{})
+</body>
+
 </html>

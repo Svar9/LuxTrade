@@ -1,42 +1,122 @@
 //<FORM ()>====================================================================================================
 .form {
-	&__row {
-	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
-	&__error {
-	}
+	&__row {}
+
+	&__column {}
+
+	&__line {}
+
+	&__input {}
+
+	&__button {}
+
+	&__error {}
 }
 
 //</FORM>====================================================================================================
 
 //<BUTTONS (a.btn+tab)>====================================================================================================
 .btn {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (min-width: 992px) {
-		&:hover {
+	position: relative;
+	display: inline-block;
+
+	&:before,
+	&:after {
+		position: absolute;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		content: "";
+	}
+
+	&::before {
+		background-color: #c3a774;
+		top: 0;
+	}
+
+	&::after {
+		background-color: #8f6630;
+		bottom: 0;
+	}
+
+	&__body {
+
+
+		&:before,
+		&:after {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 3px;
+			content: "";
+		}
+
+		&::before {
+			background-image: linear-gradient(to top, #8f6630, #c3a774);
+			left: 0;
+		}
+
+		&::after {
+			background-image: linear-gradient(to top, #8f6630, #c3a774);
+			right: 0;
+		}
+
+		span {
+			min-height: 50px;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 15px;
+			font-family: 'PFDin';
+			letter-spacing: 2px;
+			position: relative;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 50px;
+			position: relative;
+
+			&:after {
+				content: "";
+				height: 50%;
+				transition: height 0.5s ease 0s;
+				top: 0;
+				left: 0;
+				position: absolute;
+				width: 100%;
+				background-image: linear-gradient(0.0deg, rgba(0, 0, 0, 0.95) 0%, rgba(158, 158, 158, 0.95) 50%, rgba(208, 208, 208, 0.95) 100%);
+				opacity: 0.06;
+			}
 		}
 	}
+
+	@media (min-width: 992px) {
+		&:hover {
+			.btn__body span {
+				&::after {
+					opacity: 0.3;
+					height: 100%;
+				}
+			}
+		}
+	}
+
 	&._fw {
 		width: 100%;
 	}
+
 }
+
 //</BUTTONS>====================================================================================================
 
 //<SELECT (sel+tab)>====================================================================================================
 .select {
 	position: relative;
+
 	// .select__item
 	&__item {
 		position: relative;
 	}
+
 	// .select__title
 	&__title {
 		color: #000;
@@ -44,10 +124,12 @@
 		background-color: #fff;
 		cursor: pointer;
 		border-radius: 4px;
+
 		@media (max-width: $md2+px) {
 			font-size: 18px;
 		}
 	}
+
 	// .select__value
 	&__value {
 		display: flex;
@@ -57,6 +139,7 @@
 		align-items: center;
 		justify-content: space-between;
 		flex-direction: row-reverse;
+
 		span {
 			height: 1em;
 			overflow: hidden;
@@ -64,6 +147,7 @@
 			-webkit-line-clamp: 1;
 			-webkit-box-orient: vertical;
 		}
+
 		&:before {
 			content: "";
 			display: inline-block;
@@ -73,11 +157,13 @@
 			background: url("../img/icons/select.svg") center / 100% no-repeat;
 		}
 	}
+
 	&__input {
 		width: 100%;
 		background-color: transparent;
 		height: 100%;
 	}
+
 	// .select__options
 	&__options {
 		color: #000;
@@ -93,33 +179,40 @@
 		border-top: 0;
 		font-size: 14px;
 		padding: 10px 0px 5px 0px;
+
 		@media (max-width: $md2+px) {
 			font-size: 18px;
 		}
 	}
+
 	// .select__option
 	&__option {
 		cursor: pointer;
 		padding: 5px 15px;
 		margin: 0px 0px 0px 0px;
+
 		@media (min-width: 992px) {
 			&:hover {
 				background: #d9d9d9;
 			}
 		}
 	}
+
 	&._active {
 		z-index: 5;
+
 		.select__value {
 			&:before {
 				transform: rotate(-180deg);
 			}
 		}
+
 		.select__options {
 			display: block;
 		}
 	}
 }
+
 //</SELECT>====================================================================================================
 
 //<INPUT (inp+tab)>====================================================================================================
@@ -131,25 +224,29 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
+
 .input {
 	border-radius: 0 !important;
 	width: 100%;
 	display: block;
 	padding: 0px 20px;
-	&._focus {
-	}
-	&._error {
-	}
+
+	&._focus {}
+
+	&._error {}
 }
+
 textarea.input {
 	resize: none;
 	padding: 0px 0px;
 }
+
 //</INPUT>====================================================================================================
 
 //<CHECK (chk+tab)>====================================================================================================
 .checkbox {
 	position: relative;
+
 	// .checkbox__input
 	&__input {
 		position: absolute;
@@ -157,10 +254,12 @@ textarea.input {
 		height: 0;
 		opacity: 0;
 		visibility: hidden;
-		&:checked + .checkbox__text:before {
+
+		&:checked+.checkbox__text:before {
 			background: #fff url("../img/icons/check.svg") center no-repeat;
 		}
 	}
+
 	// .checkbox__text
 	&__text {
 		display: inline-flex;
@@ -171,6 +270,7 @@ textarea.input {
 		letter-spacing: -0.3px;
 		line-height: calc(20 / 16);
 		cursor: pointer;
+
 		&:before {
 			content: "";
 			align-self: flex-start;
@@ -184,15 +284,18 @@ textarea.input {
 			border: 1px solid #a7a9ac;
 		}
 	}
+
 	a {
 		color: #fff;
 		text-decoration: underline;
+
 		@media (min-width: 992px) {
 			&:hover {
 				text-decoration: none;
 			}
 		}
 	}
+
 	&._error {
 		.checkbox__text {
 			&:before {
@@ -201,6 +304,7 @@ textarea.input {
 		}
 	}
 }
+
 //</CHECK>====================================================================================================
 
 //<OPTIONS (opt+tab)>====================================================================================================
@@ -208,13 +312,15 @@ textarea.input {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+
 	// .options__item
 	&__item {
 		position: relative;
 		cursor: pointer;
-		&._error {
-		}
+
+		&._error {}
 	}
+
 	// .options__input
 	&__input {
 		position: absolute;
@@ -224,12 +330,14 @@ textarea.input {
 		left: 0;
 		top: 0;
 		visibility: hidden;
-		&:checked + .options__text:before {
-		}
-		&:checked + .options__text:after {
+
+		&:checked+.options__text:before {}
+
+		&:checked+.options__text:after {
 			transform: scale(1);
 		}
 	}
+
 	// .options__text
 	&__text {
 		display: inline-flex;
@@ -239,6 +347,7 @@ textarea.input {
 		color: #ffffff;
 		letter-spacing: -0.3px;
 		line-height: calc(20 / 16);
+
 		&:before {
 			content: "";
 			align-self: flex-start;
@@ -252,6 +361,7 @@ textarea.input {
 			background: #fff;
 			border: 1px solid #a7a9ac;
 		}
+
 		&:after {
 			content: "";
 			transition: all 0.3s ease 0s;
@@ -266,6 +376,7 @@ textarea.input {
 		}
 	}
 }
+
 //</OPTIONS>====================================================================================================
 
 //<RATING>====================================================================================================
@@ -273,13 +384,16 @@ textarea.input {
 	display: table;
 	font-size: 0;
 }
+
 .rating {
 	display: inline-block;
 	position: relative;
 	vertical-align: middle;
+
 	&.edit .star {
 		cursor: pointer;
 	}
+
 	.star {
 		width: 17px;
 		height: 14px;
@@ -288,6 +402,7 @@ textarea.input {
 		z-index: 3;
 	}
 }
+
 .rating__line {
 	position: absolute;
 	width: 85px;
@@ -298,6 +413,7 @@ textarea.input {
 	z-index: 1;
 	background-size: 85px 100%;
 }
+
 .rating__activeline {
 	position: absolute;
 	width: 0px;
@@ -308,6 +424,7 @@ textarea.input {
 	z-index: 2;
 	background-size: 85px 100%;
 }
+
 .rating__value {
 	display: inline-block;
 	color: #1b3139;
@@ -315,6 +432,7 @@ textarea.input {
 	line-height: 13px;
 	vertical-align: middle;
 }
+
 //</RATING>====================================================================================================
 
 //<QUANTITY>====================================================================================================
@@ -323,11 +441,13 @@ textarea.input {
 	height: 40px;
 	display: flex;
 	border: 1px solid rgba(166, 166, 166, 0.45);
+
 	// .quantity__button
 	&__button {
 		flex: 0 0 30px;
 		position: relative;
 		cursor: pointer;
+
 		&::before,
 		&::after {
 			content: "";
@@ -340,27 +460,32 @@ textarea.input {
 			width: 9px;
 			height: 1px;
 		}
+
 		@media (min-width: $md2+px) {
 			&:hover {
+
 				&::before,
 				&::after {
 					background-color: rgba(0, 0, 0, 0.5);
 				}
 			}
 		}
+
 		// .quantity__button_plus
 		&_plus {
 			&::before {
 				transform: rotate(-90deg);
 			}
 		}
+
 		// .quantity__button_minus
-		&_minus {
-		}
+		&_minus {}
 	}
+
 	// .quantity__input
 	&__input {
 		flex: 1 1 auto;
+
 		input {
 			height: 100%;
 			color: #a6a6a6;
@@ -370,6 +495,7 @@ textarea.input {
 		}
 	}
 }
+
 //</QUANTITY>====================================================================================================
 
 //<RANGE>====================================================================================================
