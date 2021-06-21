@@ -211,10 +211,70 @@ body {
 	&__container {}
 
 	// .lots__header
-	&__header {}
+	&__header {
+		margin: 0px 0px 40px 0px;
+	}
 
 	// .lots__slider
 	&__slider {}
+}
+
+.slider-lots {
+
+	// .slider-lots__control
+	&__control {}
+}
+
+.control-slider-lots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	// .control-slider-lots__arrow
+	&__arrow {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		span {
+			flex: 0 0 108px;
+			background: url('../img/icons/sl-arrow.svg') 0 0 no-repeat;
+			width: 108px;
+			height: 35px;
+		}
+
+		&:after {
+			content: "";
+			margin: 0 5px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			border: 2px solid #bb9c66;
+		}
+
+		&:last-child {
+			transform: rotate(180deg)
+		}
+
+		;
+	}
+
+	// .control-slider-lots__link
+	&__link {
+		background: url('../img/lots/circle.png') 0 0 no-repeat;
+		width: 100px;
+		flex: 0 0 100px;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 21px;
+		color: #000;
+		font-weight: 500;
+		font-family: 'PFDin';
+		text-transform: uppercase;
+		margin: 0 20px;
+	}
 }
 
 
