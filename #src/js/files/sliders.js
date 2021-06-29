@@ -111,7 +111,7 @@ let main_slider = new Swiper('.main-slider__body', {
 	//},
 });
 
-let main_slider = new Swiper('.slider-lots__body', {
+let lots_slider = new Swiper('.slider-lots__body', {
 	/*
 	effect: 'fade',
 	autoplay: {
@@ -137,8 +137,8 @@ let main_slider = new Swiper('.slider-lots__body', {
 	//},
 	// Arrows
 	navigation: {
-		nextEl: '.control-main-slider__arrow_next',
-		prevEl: '.control-main-slider__arrow_prev',
+		nextEl: '.control-slider-lots__arrow_next',
+		prevEl: '.control-slider-lots__arrow_prev',
 	},
 	
 	/* breakpoints: {

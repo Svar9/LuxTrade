@@ -222,8 +222,19 @@ body {
 
 .slider-lots {
 
+	&__body{
+		margin: 0 -50px;
+		.swiper-wrapper{
+			align-items: stretch;
+		}
+	}
+	&__slide{
+		padding: 0 50px;
+	}
+
 	// .slider-lots__control
-	&__control {}
+	&__control {
+	}
 }
 
 .control-slider-lots {
