@@ -68,7 +68,7 @@
 			font-family: 'PFDin';
 			letter-spacing: 2px;
 			position: relative;
-			display: inline-flex;
+			display: flex;
 			justify-content: center;
 			align-items: center;
 			padding: 0 50px;
@@ -87,14 +87,16 @@
 			}
 		}
 	}
-	&--big{
-		.btn__body span{
+
+	&--big {
+		.btn__body span {
 			font-size: 21px;
+			padding: 0 10px;
 			color: #000;
 			font-weight: 500;
 			letter-spacing: 0;
 		}
-	}	
+	}
 
 	@media (min-width: 992px) {
 		&:hover {

@@ -141,14 +141,17 @@ let lots_slider = new Swiper('.slider-lots__body', {
 		prevEl: '.control-slider-lots__arrow_prev',
 	},
 	
-	/* breakpoints: {
+	 breakpoints: {
 		320: {
-			autoHeight: true,
+			slidesPerView: 1,
+		},
+		550: {
+			slidesPerView: 2,
 		},
 		768: {
-			autoHeight:false,
+			slidesPerView: 3,	
 		}
-	}, */
+	}, 
 	
 	on: {
 		lazyImageReady: function () {
